@@ -1,0 +1,107 @@
+body {
+  min-height: 100vh;
+  background-color: #18191a;
+}
+
+/*================================================================*/
+/*============================ Navbar ============================*/
+/*================================================================*/
+nav {
+  z-index: 1200;
+  background-color: #242526;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0 !important;
+}
+
+nav .container-fluid {
+}
+
+nav .log-srch {
+  display: flex;
+  align-items: center;
+}
+
+nav .log-srch img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+nav .log-srch .input-group {
+  background-color: #3a3b3c;
+  border-radius: 30px;
+}
+
+nav .log-srch .input-group-text {
+  background-color: #3a3b3c;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+nav .log-srch .input-group-text img {
+  width: 20px;
+  height: 20px;
+}
+
+nav .log-srch .input-group input {
+  border: none;
+  outline: none;
+  background-color: #3a3b3c;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  color: #a7b1ac;
+  width: 175px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+nav .log-srch .input-group input::placeholder {
+  color: #a7b1ac;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  border-bottom: 3px solid #2374e1;
+}
+
+.navbar-light .navbar-nav .nav-link svg {
+  fill: #b0b3b8;
+}
+
+.navbar-light .navbar-nav .nav-link svg.active {
+  fill: #2374e1;
+}
+
+nav .rig img.pro-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav .rig svg {
+  fill: #b0b3b8;
+  width: 38px;
+  height: 38px;
+  background-color: #3a3b3c;
+  border-radius: 50%;
+  margin-right: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+nav .rig svg:hover {
+  fill: #cbcdd0;
+}
+
+/*================================================================*/
+/*=========================== Homepage ===========================*/
+/*================================================================*/
+.homepage {
+  padding: 100px 0;
+}
