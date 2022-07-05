@@ -1,12 +1,76 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import ProPic from '../../assets/img/nav/p_pic.jpeg';
+import { MainContext } from '../../context/MainContext';
+import { allPosts } from '../../helpers/Arrays';
 
 function MiddleBar() {
+  const { userDetails } = useContext(MainContext);
+  const [posts, setPosts] = useState([]);
+  const [comment, setComment] = useState('');
+
+  useEffect(() => {
+    axios
+      .get(`https://jsonplaceholder.typicode.com/posts?_start=0&_limit=5`)
+      .then((resp) => {
+        // console.log(resp.data);
+        setPosts(allPosts);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, []);
+
+  const handleComment = (user, postId) => {
+    if (comment.trim() === '') {
+      alert('Please enter comment.');
+    } else {
+      const postComment = {
+        text: comment,
+        created_at: '22 July 2022',
+        user: user,
+      };
+
+      const newPosts = posts.map((post, i) => {
+        if (post.id === postId) {
+          post.comments.push(postComment);
+        }
+        return post;
+      });
+
+      setPosts(newPosts);
+      setComment('');
+    }
+  };
+
+  const handleLike = (post) => {
+    // console.log(post);
+    const newPosts = posts.map((p, i) => {
+      if (p.id === post.id) {
+        p.liked = !p.liked;
+      }
+      return p;
+    });
+
+    setPosts(newPosts);
+  };
+
   return (
     <>
       <div className='all-posts'>
-        <SinglePost />
-        <SinglePost />
+        {posts &&
+          posts.length !== 0 &&
+          posts.map((post, i) => (
+            <SinglePost
+              key={i}
+              post={post}
+              userDetails={userDetails}
+              handleComment={handleComment}
+              comment={comment}
+              setComment={setComment}
+              handleLike={handleLike}
+            />
+          ))}
       </div>
     </>
   );
@@ -14,15 +78,22 @@ function MiddleBar() {
 
 export default MiddleBar;
 
-const SinglePost = (data) => (
+const SinglePost = ({
+  userDetails,
+  post,
+  handleComment,
+  comment,
+  setComment,
+  handleLike,
+}) => (
   <div className='single-posts'>
     <div className='header'>
       <div className='left'>
-        <img src={ProPic} alt='' className='post-user-img' />
+        <img src={post.user.profile_pic} alt='' className='post-user-img' />
         <div className='aut-details'>
-          <p className='name'>Injamamul Haque</p>
+          <p className='name'>{post.user.name}</p>
           <a href='#?' className='time'>
-            Yesterday at 12:56am
+            {post.posted_on}
           </a>
         </div>
       </div>
@@ -47,11 +118,7 @@ const SinglePost = (data) => (
       </div>
     </div>
     <div className='main-img'>
-      <img
-        src='https://via.placeholder.com/600/e375fc'
-        alt=''
-        className='img-fluid'
-      />
+      <img src={post.post_image} alt='' className='img-fluid' />
     </div>
     <div className='bottom'>
       <div className='reactions'>
@@ -64,17 +131,22 @@ const SinglePost = (data) => (
             width={18}
             style={{ userSelect: 'auto' }}
           />
-          <span className=''>You and 19 others</span>
+          <span className=''>
+            {post.liked ? 'You and' : ''} {post.likes}{' '}
+            {post.liked ? 'others' : ''}
+          </span>
         </div>
         <div className='right'>
-          <span className=''>135 Comments</span>
-          <span className='share'>25 Shares</span>
+          <span className=''>{post.comments.length} Comments</span>
+          <span className='share'>{post.share} Shares</span>
         </div>
       </div>
       <div className='line-brk'></div>
       <div className='l-c-s'>
-        <div className='like'>
-          <span className='like-text'>like</span>
+        <div className='like' onClick={() => handleLike(post)}>
+          <span className={post.liked ? 'liked' : ''}>
+            {post.liked ? 'Like' : 'like'}
+          </span>
         </div>
         <div className='comment'>
           <span className='comment-text'>Comment</span>
@@ -85,21 +157,35 @@ const SinglePost = (data) => (
       </div>
       <div className='line-brk'></div>
       <div className='comment-section'>
-        <div className='all-comments'>
-          <div className='single'>
-            <img src={ProPic} alt='' />
-            <div className='data'>
-              <p className='author'>Injamaul Haque</p>
-              <p className='main-c'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-                animi.
-              </p>
-            </div>
+        {post.comments.length !== 0 && (
+          <div className='all-comments'>
+            {post.comments.map((comment, i) => (
+              <div className='single' key={i}>
+                <img src={comment.user.profile_pic} alt='' />
+                <div className='data'>
+                  <p className='author'>{comment.user.name}</p>
+                  <p className='main-c'>{comment.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
+        )}
         <div className='comment-inp'>
-          <img src={ProPic} alt='' />
-          <input type='text' placeholder='Write a comment' id='' />
+          <img src={userDetails.profile_pic} alt='' />
+          <form
+            onSubmit={(e) => {
+              handleComment(userDetails, post.id);
+              e.preventDefault();
+            }}
+            style={{ width: '100%' }}
+          >
+            <input
+              type='text'
+              placeholder='Write a comment'
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </form>
         </div>
       </div>
     </div>

@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProPic from '../../assets/img/nav/p_pic.jpeg';
 import FindFrnd from '../../assets/img/home/find-icon.png';
 import WatchIcon from '../../assets/img/home/watch.png';
 import GroupIcon from '../../assets/img/home/groups-icon.png';
 import PageIcon from '../../assets/img/home/page-icon.png';
 import GameIcon from '../../assets/img/home/game.png';
+import { MainContext } from '../../context/MainContext';
 
 const LeftBar = () => {
+  const { userDetails } = useContext(MainContext);
+
   return (
     <>
       <div className='top'>
         <ul>
           <li className='profile'>
-            <img src={ProPic} alt='' />
-            <span>Injamamul Haque</span>
+            <img src={userDetails.profile_pic} alt='' />
+            <span>{userDetails.name}</span>
           </li>
           <li className=''>
             <img src={FindFrnd} alt='' />

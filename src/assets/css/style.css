@@ -312,6 +312,14 @@ nav .rig svg:hover {
   transition: all 0.3s;
 }
 
+.homepage .middle-section .all-posts .single-posts .bottom .l-c-s span {
+  font-weight: 700;
+}
+
+.homepage .middle-section .all-posts .single-posts .bottom .l-c-s span.liked {
+  color: #2374e1;
+}
+
 .homepage .middle-section .all-posts .single-posts .bottom .l-c-s > div:hover {
   background-color: #49494b;
 }
