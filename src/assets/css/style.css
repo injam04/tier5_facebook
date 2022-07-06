@@ -15,9 +15,6 @@ nav {
   padding: 0 !important;
 }
 
-nav .container-fluid {
-}
-
 nav .log-srch {
   display: flex;
   align-items: center;
