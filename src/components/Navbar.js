@@ -104,7 +104,7 @@ const Navbar = () => {
           </ul>
           <ul className='navbar-nav ml-auto'>
             <div className='rig'>
-              <div className=''>
+              <div className='all'>
                 {/* <img src={NineDot} alt='' /> */}
                 <svg
                   viewBox='0 0 44 44'

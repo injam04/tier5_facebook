@@ -1,7 +1,14 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { useContext, useEffect, useState } from 'react';
-import ProPic from '../../assets/img/nav/p_pic.jpeg';
+import StoryOne from '../../assets/img/home/story1.webp';
+import StoryTwo from '../../assets/img/home/story2.webp';
+import StoryThree from '../../assets/img/home/story3.webp';
+import StoryFour from '../../assets/img/home/story4.webp';
+import LikeIcon from '../../assets/img/home/like.png';
+import LikeBlueIcon from '../../assets/img/home/like-blue.png';
+import CommentIcon from '../../assets/img/home/comment.png';
+import ShareIcon from '../../assets/img/home/share.png';
 import { MainContext } from '../../context/MainContext';
 import { allPosts } from '../../helpers/Arrays';
 
@@ -66,9 +73,37 @@ function MiddleBar() {
   return (
     <>
       <div className='stories'>
-        <SingleStory />
-        <SingleStory />
-        <SingleStory />
+        <div className='single'>
+          <img src={userDetails.profile_pic} alt='' className='s-img' />
+          <div className='user_pic'></div>
+          <div className='svg-section'>
+            <svg
+              fill='currentColor'
+              viewBox='0 0 20 20'
+              width='1em'
+              height='1em'
+              className='a8c37x1j ms05siws l3qrxjdp b7h9ocf4 ljqsnud1 jnigpg78 odw8uiq3'
+            >
+              <g fillRule='evenodd' transform='translate(-446 -350)'>
+                <g fillRule='nonzero'>
+                  <path
+                    d='M95 201.5h13a1 1 0 1 0 0-2H95a1 1 0 1 0 0 2z'
+                    transform='translate(354.5 159.5)'
+                  />
+                  <path
+                    d='M102.5 207v-13a1 1 0 1 0-2 0v13a1 1 0 1 0 2 0z'
+                    transform='translate(354.5 159.5)'
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p className='user_name first'>Create Story</p>
+        </div>
+        <SingleStory i_id={StoryOne} name='Md Raisul' />
+        <SingleStory i_id={StoryTwo} name='Hasan Khalifa' />
+        <SingleStory i_id={StoryThree} name='Jack Daniel' />
+        {/* <SingleStory i_id={StoryFour} name='Mir Ashraf' /> */}
       </div>
       <div className='create-box post-box'>
         <div className='top'>
@@ -306,14 +341,21 @@ const SinglePost = ({
       <div className='line-brk'></div>
       <div className='l-c-s'>
         <div className='like' onClick={() => handleLike(post)}>
+          {post.liked ? (
+            <img src={LikeBlueIcon} alt='' />
+          ) : (
+            <img src={LikeIcon} alt='' />
+          )}
           <span className={post.liked ? 'liked' : ''}>
             {post.liked ? 'Like' : 'like'}
           </span>
         </div>
         <div className='comment'>
+          <img src={CommentIcon} alt='' />
           <span className='comment-text'>Comment</span>
         </div>
         <div className='share'>
+          <img src={ShareIcon} alt='' />
           <span className='share-text'>Send</span>
         </div>
       </div>
@@ -354,12 +396,12 @@ const SinglePost = ({
   </div>
 );
 
-const SingleStory = () => (
+const SingleStory = ({ i_id, name }) => (
   <div className='single'>
-    <img src={ProPic} alt='' className='s-img' />
+    <img src={`${i_id}`} alt='' className='s-img' />
     <div className='user_pic'>
       {/* <img src='./img/user/n0tificati0n-img-9.png' alt='' className='' /> */}
     </div>
-    <p className='user_name'>Md Raisul</p>
+    <p className='user_name'>{name}</p>
   </div>
 );

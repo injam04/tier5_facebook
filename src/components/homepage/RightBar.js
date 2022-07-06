@@ -1,5 +1,4 @@
 import React from 'react';
-import ProfileIcon from '../../assets/img/nav/p_pic.jpeg';
 
 function RightBar() {
   return (
@@ -82,6 +81,14 @@ function RightBar() {
         </div>
       </div>
       <div className='chat-lists'>
+        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
+        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
+        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
+        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
+        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
+        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
+        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
+        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
         <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
         <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
         <SingleChat name='James Anderson' active={false} i_id='34g8798' />

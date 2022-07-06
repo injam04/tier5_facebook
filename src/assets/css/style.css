@@ -320,8 +320,14 @@ nav .rig svg:hover {
   transition: all 0.3s;
 }
 
+.homepage .middle-section .all-posts .single-posts .bottom .l-c-s > div img {
+  width: 23px;
+  height: 17px;
+}
+
 .homepage .middle-section .all-posts .single-posts .bottom .l-c-s span {
   font-weight: 700;
+  color: #b0b3b8;
 }
 
 .homepage .middle-section .all-posts .single-posts .bottom .l-c-s span.liked {
@@ -472,6 +478,34 @@ nav .rig svg:hover {
   font-weight: 700;
   cursor: pointer;
   left: 10px;
+}
+
+.homepage .middle-section .stories .single p.user_name.first {
+  background-color: #242526;
+  background-color: #3a3b3c;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0 5px;
+}
+
+.homepage .middle-section .stories .single svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
+
+.homepage .middle-section .stories .single .svg-section {
+  background: #2374e1;
+  padding: 5px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 76%;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 9;
 }
 
 .homepage .middle-section .stories .single .user_pic {
@@ -779,5 +813,73 @@ nav .rig svg:hover {
     padding-left: 50px;
     padding-right: 50px;
     margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homepage .left-section,
+  .homepage .right-section {
+    display: none;
+  }
+
+  .homepage .middle-section .create-box .l-p-f > div.feeling {
+    display: none;
+  }
+
+  .homepage .middle-section .stories > div:nth-child(2) {
+    display: none;
+  }
+  .homepage .middle-section .stories > div:nth-child(3) {
+    display: none;
+  }
+
+  .navbar-light .navbar-toggler {
+    display: none;
+  }
+
+  .collapse:not(.show) {
+    display: initial;
+  }
+
+  .navbar-nav.mx-auto.middle {
+    display: none;
+  }
+
+  nav .container-fluid {
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+  }
+
+  nav {
+    padding: 0 0;
+  }
+
+  nav .rig .all {
+    display: flex;
+    justify-content: end;
+  }
+
+  nav .log-srch .input-group input {
+    display: none;
+  }
+
+  nav .log-srch .input-group-text img {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+
+  nav .log-srch .input-group-text {
+    border-radius: 50% !important;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+
+  nav .input-group-text {
+    padding: 7px 7px;
+  }
+
+  .navbar-light .navbar-brand {
+    margin-right: 10px;
   }
 }
