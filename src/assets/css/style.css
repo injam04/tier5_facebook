@@ -226,6 +226,7 @@ nav .rig svg:hover {
 
 .homepage .middle-section .all-posts .single-posts .main-img img {
   cursor: pointer;
+  width: 100%;
 }
 
 .homepage .middle-section .all-posts .single-posts .bottom .reactions {
@@ -478,7 +479,7 @@ nav .rig svg:hover {
   cursor: pointer;
   top: 8px;
   left: 8px;
-  background-color: red;
+  background-color: #cc8b8b;
   padding: 17px;
   border-radius: 50%;
   border: 2px solid #007bff;
@@ -612,4 +613,171 @@ nav .rig svg:hover {
   height: 38px;
   border-radius: 50%;
   margin-left: 10px;
+}
+
+.homepage .right-section .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .right-section .header .left {
+  color: #b0b3b8;
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.homepage .right-section .header .right svg {
+  fill: #b0b3b8;
+  margin-left: 20px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.homepage .right-section .chat-lists img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.homepage .right-section .chat-lists img.active-img {
+  border: 2px solid #007bff;
+  padding: 2px 2px;
+}
+
+.homepage .right-section .chat-lists .single {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.homepage .right-section .chat-lists .single:hover {
+  background-color: #303031;
+}
+
+.homepage .right-section .chat-lists .single p.name {
+  margin: 0;
+}
+
+.homepage .right-section .chat-lists .single .img-section {
+  position: relative;
+  margin-right: 10px;
+}
+
+.homepage .right-section .chat-lists .single .img-section .active-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #31a24c;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.homepage .right-section .chat-lists {
+  margin: 15px 0;
+  height: 87vh;
+  overflow-y: scroll;
+}
+
+.homepage .right-section .chat-lists::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 50%;
+}
+
+.homepage .right-section .chat-lists::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.homepage .right-section .chat-lists::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media screen and (min-width: 1800px) and (max-width: 21000px) {
+  .homepage .middle-section {
+    margin: auto;
+    width: 70%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 15px;
+  }
+
+  .homepage .left-section {
+    width: 80%;
+  }
+
+  .homepage .right-section {
+    width: 80%;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1799px) {
+  .homepage .middle-section {
+    margin: auto;
+    width: 80%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 15px;
+  }
+
+  .homepage .left-section {
+    width: 90%;
+  }
+
+  .homepage .right-section {
+    width: 90%;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1350px) and (max-width: 1599px) {
+  .homepage .middle-section {
+    margin: auto;
+    width: 80%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1349px) {
+  .homepage .middle-section {
+    margin: auto;
+    width: 90%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1289px) {
+  .homepage .middle-section {
+    margin: auto;
+    width: 100%;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 0px;
+  }
 }
