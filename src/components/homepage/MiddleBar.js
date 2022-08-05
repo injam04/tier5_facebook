@@ -31,7 +31,7 @@ function MiddleBar() {
     let start = moment([2022, 7, 1]);
     let end = moment([2022, 7, 1]);
     const a = end.to(start);
-    console.log(a);
+    // console.log(a);
     // console.log(moment(1657025645163).fromNow());
     // end.to(start, true);
   }, []);
