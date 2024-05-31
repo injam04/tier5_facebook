@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import ProPic from '../../assets/img/nav/p_pic.jpeg';
 import FindFrnd from '../../assets/img/home/find-icon.png';
 import WatchIcon from '../../assets/img/home/watch.png';
 import GroupIcon from '../../assets/img/home/groups-icon.png';

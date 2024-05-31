@@ -853,7 +853,7 @@ nav .rig svg:hover {
 
   nav .rig .all {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   nav .log-srch .input-group input {

@@ -1,10 +1,8 @@
 import axios from 'axios';
-import moment from 'moment';
 import React, { useContext, useEffect, useState } from 'react';
 import StoryOne from '../../assets/img/home/story1.webp';
 import StoryTwo from '../../assets/img/home/story2.webp';
 import StoryThree from '../../assets/img/home/story3.webp';
-import StoryFour from '../../assets/img/home/story4.webp';
 import LikeIcon from '../../assets/img/home/like.png';
 import LikeBlueIcon from '../../assets/img/home/like-blue.png';
 import CommentIcon from '../../assets/img/home/comment.png';
@@ -27,10 +25,6 @@ function MiddleBar() {
       .catch((error) => {
         console.log(error.response);
       });
-
-    let start = moment([2022, 7, 1]);
-    let end = moment([2022, 7, 1]);
-    const a = end.to(start);
     // console.log(a);
     // console.log(moment(1657025645163).fromNow());
     // end.to(start, true);
