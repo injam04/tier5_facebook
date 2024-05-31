@@ -1,4 +1,5 @@
 import React from 'react';
+import ChatLists from '../../helpers/ChatList.json';
 
 function RightBar() {
   return (
@@ -81,30 +82,17 @@ function RightBar() {
         </div>
       </div>
       <div className='chat-lists'>
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
-        <SingleChat name='Liam Olivia' active={true} i_id='34t5435' />
-        <SingleChat name='Ismail Sheikh' active={false} i_id='65h755' />
-        <SingleChat name='James Anderson' active={false} i_id='34g8798' />
-        <SingleChat name='Katherine Langford' active={true} i_id='09j765' />
+        {ChatLists?.map((chat, i) => {
+          return (
+            <SingleChat
+              key={i}
+              name={chat?.name}
+              active={chat?.active}
+              i_id='34t5435'
+              bgColor={chat?.bgColor}
+            />
+          );
+        })}
       </div>
     </>
   );
@@ -112,14 +100,13 @@ function RightBar() {
 
 export default RightBar;
 
-const SingleChat = ({ name, active, i_id }) => (
+const SingleChat = ({ name, active, i_id, bgColor }) => (
   <div className='single'>
     <div className='img-section'>
-      <img
-        src={`https://via.placeholder.com/600/${i_id}`}
-        alt=''
-        className={active ? 'active-img' : ''}
-      />
+      <div className={`${active ? 'active-img' : ''} img`}>
+        <div className='child' style={{ background: bgColor }}></div>
+      </div>
+
       {active && <div className='active-icon'></div>}
     </div>
     <p className='name'>{name}</p>

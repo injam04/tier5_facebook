@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import StoryOne from '../../assets/img/home/story1.webp';
 import StoryTwo from '../../assets/img/home/story2.webp';
 import StoryThree from '../../assets/img/home/story3.webp';
+import CreateRoomIcon from '../../assets/img/home/create-room.png';
 import LikeIcon from '../../assets/img/home/like.png';
 import LikeBlueIcon from '../../assets/img/home/like-blue.png';
 import CommentIcon from '../../assets/img/home/comment.png';
@@ -217,34 +218,15 @@ function MiddleBar() {
       </div>
       <div className='create-room post-box'>
         <div className='room'>
-          <i
-            data-visualcompletion='css-img'
-            className='active-line--btn--icon'
-            style={{
-              backgroundImage:
-                'url("https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/5zaboDASSye.png")',
-              backgroundPosition: '0px -219px',
-              backgroundSize: 'auto',
-              width: '24px',
-              height: '24px',
-              backgroundRepeat: 'no-repeat',
-              display: 'inline-block',
-              userSelect: 'auto',
-            }}
-          />
+          <img src={CreateRoomIcon} height={15} alt='' />
           <p className=''>Create Room</p>
         </div>
         <div className='images'>
-          <div className='single'>
-            <img src={userDetails.profile_pic} alt='' />
-          </div>
-          <div className='single'>
-            <img src={userDetails.profile_pic} alt='' />
-            <div className='active-icon'></div>
-          </div>
-          <div className='single'>
-            <img src={userDetails.profile_pic} alt='' />
-          </div>
+          {Array.from({ length: 3 }).map((d, i) => (
+            <div className='single' key={i}>
+              <img src={userDetails.profile_pic} alt='' />
+            </div>
+          ))}
         </div>
       </div>
       <div className='all-posts'>
@@ -308,7 +290,7 @@ const SinglePost = ({
       </div>
     </div>
     <div className='main-img'>
-      <img src={post.post_image} alt='' className='img-fluid' />
+      <div className='img' style={{ background: post?.post_image }}></div>
     </div>
     <div className='bottom'>
       <div className='reactions'>

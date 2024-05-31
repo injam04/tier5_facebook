@@ -164,7 +164,7 @@ nav .rig svg:hover {
   margin-bottom: 10px;
 }
 
-.homepage .left-section .bottom ul li img {
+.homepage .left-section .bottom ul li .img {
   width: 38px;
   height: 38px;
   border-radius: 10px;
@@ -221,9 +221,10 @@ nav .rig svg:hover {
   text-decoration: none;
 }
 
-.homepage .middle-section .all-posts .single-posts .main-img img {
+.homepage .middle-section .all-posts .single-posts .main-img .img {
   cursor: pointer;
   width: 100%;
+  height: 480px;
 }
 
 .homepage .middle-section .all-posts .single-posts .bottom .reactions {
@@ -667,13 +668,20 @@ nav .rig svg:hover {
   cursor: pointer;
 }
 
-.homepage .right-section .chat-lists img {
+.homepage .right-section .chat-lists .img {
   width: 38px;
   height: 38px;
   border-radius: 50%;
 }
 
-.homepage .right-section .chat-lists img.active-img {
+.homepage .right-section .chat-lists .img .child {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  border-radius: inherit;
+}
+
+.homepage .right-section .chat-lists .img.active-img {
   border: 2px solid #007bff;
   padding: 2px 2px;
 }

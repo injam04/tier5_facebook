@@ -1,4 +1,5 @@
 import { createContext, Component } from 'react';
+import ProfilerPic from '../assets/img/nav/p_pic.jpeg';
 
 export const MainContext = createContext();
 
@@ -12,7 +13,7 @@ class MainContextProvider extends Component {
       userDetails: {
         username: 'injam',
         name: 'Injamamul Haque',
-        profile_pic: 'https://avatars.githubusercontent.com/u/55509736?v=4',
+        profile_pic: ProfilerPic,
       },
     });
   }

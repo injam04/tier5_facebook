@@ -33,7 +33,7 @@ export const allPosts = [
         },
       },
     ],
-    post_image: 'https://via.placeholder.com/600/810b14',
+    post_image: '#810b14',
     share: 5,
   },
   {
@@ -57,7 +57,7 @@ export const allPosts = [
         },
       },
     ],
-    post_image: 'https://via.placeholder.com/600/e375fc',
+    post_image: '#e375fc',
     share: 2,
   },
 ];

@@ -5,6 +5,7 @@ import GroupIcon from '../../assets/img/home/groups-icon.png';
 import PageIcon from '../../assets/img/home/page-icon.png';
 import GameIcon from '../../assets/img/home/game.png';
 import { MainContext } from '../../context/MainContext';
+import ShortcutJson from '../../helpers/LeftShortcut.json';
 
 const LeftBar = () => {
   const { userDetails } = useContext(MainContext);
@@ -67,30 +68,12 @@ const LeftBar = () => {
       <div className='bottom'>
         <p className='tit'>Your Shortcuts</p>
         <ul>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/92c952'} alt='' />
-            <span>CSE/EEE JOBS in Bangladesh</span>
-          </li>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/771796'} alt='' />
-            <span>GFX Mentor Community</span>
-          </li>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/24f355'} alt='' />
-            <span>Gta Games</span>
-          </li>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/d32776'} alt='' />
-            <span>NetfliX Offical</span>
-          </li>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/b0f7cc'} alt='' />
-            <span>8 Ball Pool</span>
-          </li>
-          <li className=''>
-            <img src={'https://via.placeholder.com/600/810b14'} alt='' />
-            <span>Play Games</span>
-          </li>
+          {ShortcutJson?.map((data) => (
+            <li className='' key={data?.id}>
+              <div className='img' style={{ background: data?.bgColor }}></div>
+              <span>{data?.name}</span>
+            </li>
+          ))}
           <li className='see-more'>
             <div className='rounde'>
               <svg
